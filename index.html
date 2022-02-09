@@ -1,0 +1,1444 @@
+
+   <style>
+    /*/ defaultais /*/
+* {
+    box-sizing: border-box;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto,sans-serif;
+}
+html{
+  background: white;
+  padding:5px;
+}
+img{
+    width: 100%;
+}
+a{
+  text-decoration: none;
+  color:black;
+}
+a:hover{
+  text-decoration: underline;
+  color:black;
+}
+p{
+  font-weight: 300;
+  padding: 5px;
+  padding-left: 10px;
+  line-height: 1.5;
+}
+h1{
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+h3 {
+    padding-top: 10px;
+    padding-bottom: 3px;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+h2 {
+    padding-top: 10px;
+    padding-bottom:10px;
+    font-size: 17px;
+}
+h4 {
+    padding-top: 5px;
+    font-size: 21px;
+    font-weight: 300;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+ul {
+    font-weight: 300;
+    padding-left: 40px;
+    line-height: 1.5;
+}
+/*/ Panelja informācija /*/
+#subkad_teksts {
+    margin-top: 10px;
+    height: 18px;
+    margin-bottom: 17px;
+    border-bottom: 2px solid #f5cc06;
+}
+#subkad_virs {
+    margin: 40px 0;
+    min-height: 15px;
+    margin-bottom: 17px;
+    border-bottom: 2px solid #f5cc06;
+}
+.subkategorija {
+    font-size: 25px;
+    width: fit-content;
+    margin-left: 25px;
+    padding: 0px 15px;
+    font-weight: 400;
+}
+.accordion {
+    margin-top: 2px;
+    cursor: pointer;
+    padding: 5px 10px;
+    width: 100%;
+    border-bottom: 1px;
+    text-align: left;
+    font-size: 15px;
+    transition: 0.4s;
+    outline: none;
+    background: #fff;
+    border-bottom: 1px solid #e4e4e4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.active{
+    transition: none;
+}
+.accordion:hover {
+    background-color: #a5a5a512;
+    transition: none;
+}
+.accordion:after {
+    text-align: center;
+    content: "Apskatīt";
+    float: right;
+    padding-right: 30px;
+}
+.active:after {
+    content: "Atvērts";
+}
+.a_panel {
+    width: 85%;
+    margin: 0 auto;
+    max-height: 0;
+    margin-bottom: 3px;
+    overflow: hidden;
+    transition: max-height 0.32s ease-out;
+}
+#virsrakstu_info {
+    border-bottom: 1px solid #7b7b7b;
+    display: inline-flex;
+    width: 100%;
+    padding: 10px 0 5px;
+}
+#v_plat {
+    font-size: 16px;
+    font-weight: 500;
+    width: 22%;
+    text-align: center;
+}
+#v_plat:last-child {
+    position: absolute;
+    right: 0;
+    width: 15%;
+}
+#b_plat:first-child {
+    font-weight: 600;
+}
+#b_plat {
+    font-size: 14px;
+    border-right: 1px solid #dedede;
+    width: 100%;
+    text-align: center;
+}
+#baneru_info {
+    display: inline-flex;
+    width: 89%;
+}
+#z_v_plat {
+    font-size: 16px;
+    font-weight: 500;
+    width: 22%;
+    text-align: center;
+}
+#z_v_plat:last-child{
+  width: 12%;
+}
+#z_b_plat:first-child {
+    font-weight: 600;
+}
+#z_b_plat {
+    font-size: 14px;
+    border-right: 1px solid #dedede;
+    width: 100%;
+    text-align: center;
+}
+#z_baneru_info {
+    display: inline-flex;
+    width: 89%;
+}
+.baneru_informacija {
+    font-size: 14px;
+    width: 100%;
+    padding: 5px 20px;
+}
+.panel_info {
+    padding: 10px;
+    width: 100%;
+    display: inline-flex;
+}
+.b_nos{
+  border-right: 1px solid white; padding-right:5px; color:black
+}
+.baneru_piemers {
+    max-width: 30%;
+    max-height: 200px;
+    object-fit: contain;
+}
+.izmeru_virsraksti {
+    display: inline-flex;
+    width: 100%;
+    font-weight: 500;
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 1px;
+    margin-bottom: 3px;
+}
+.izmeru_teksts{
+    display: flex;
+}
+.info_1 {
+    padding-top: 4px;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+}
+.pieejamie_izmeri{font-weight: 500
+}
+.specifikacija {
+    line-height: 1.6rem;
+    padding-left: 50px;
+}
+.main_saturs {
+    background: White;
+    overflow: auto;
+}
+#reklamas_tabi {
+    background-color: #f5cc06;
+    position: relative;
+}
+.uzruna {
+    position: absolute;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #272727;
+    top: 70px;
+    left: 25px;
+    z-index: 1;
+}
+.uzruna2 {
+    position: absolute;
+    font-size: 1.55rem;
+    font-weight: 200;
+    color: #272727;
+    top: 130px;
+    left: 25px;
+    z-index: 1;
+}
+.cover_bilde {
+    object-fit: contain;
+    background-image: url(https://i.jauns.lv/t/2017/02/03/68668/1800x600.jpg?v=1486114809);
+    background-size: cover;
+    height: 220px;
+    overflow: hidden;
+}
+/*/ tabi /*/
+.warpper {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+}
+.tab {
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 18px;
+    margin: 0 4px;
+    display: inline-block;
+    font-weight: 300;
+}
+.panels {
+  width:100%;
+    min-height: 600px;
+    margin-left: 0;
+    float: left;
+    text-align: left;
+    overflow: hidden;
+    padding: 20px;
+}
+.panel{
+  display:none;
+}
+.panel-title {
+    border-bottom: 2px solid #f5cb02;
+    font-size: 1.72em;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+.radio{
+  display:none;
+}
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel,
+#five:checked ~ .panels #five-panel,
+#six:checked ~ .panels #six-panel,
+#seven:checked ~ .panels #seven-panel{
+  display:block;
+}
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab,
+#five:checked ~ .tabs #five-tab,
+#six:checked ~ .tabs #six-tab,
+#seven:checked ~ .tabs #seven-tab{
+      color: #2b2b2b;
+      font-weight: 400;
+      border-bottom: 1px solid;
+  }
+/*/ responsivie /*/
+@media only screen and (max-width: 800px) {
+  .accordion:after {
+    text-align: center;
+    content: "Apskatīt";
+    float: right;
+    padding-right: 9px;
+}
+}
+@media only screen and (max-width: 600px) {
+  #lapas_saturs {
+    padding: 5px;
+    width: 100%;
+}
+#reklamas_tabi {
+    height: 130px;
+    background-color: #f5cc06;
+    position: relative;
+}
+.accordion{
+    padding: 5px;
+}
+.uzruna2 {
+    font-size: 21px;
+    top: 75px;
+    left: 25px;
+    z-index: 1;
+}
+.a_panel {
+    background: #fff;
+  }
+.uzruna {
+    font-size: 1.92rem;
+    top: 15px;
+    line-height: 27px;
+}
+.cover_bilde {
+    height: 150px;}
+.panels {
+    width: 100%;}
+  .baneru_piemers {
+      width: 50%;
+      margin: 0 auto;
+  }
+  .main_saturs {
+    width: 100%;
+  }
+  .panels {
+      padding: 2px;
+  }
+  #v_plat {
+      font-size: 14px;
+      width: 25%;
+  }
+  #b_plat:nth-child(4){
+    border:none;
+  }
+  #v_plat:last-child {
+    display: none;
+}
+.accordion:after {
+    display: none;
+}
+#baneru_info {
+    display: inline-flex;
+    width: 100%;
+}
+.baneru_informacija {
+    font-size: 13px;
+    padding: 5px;
+}
+.panel-title {
+  padding-top:10px;
+}
+#subkad_virs {
+    margin: 20px 0;
+    height: 10px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f5cc06;
+}
+.subkategorija {
+    line-height: 18px;
+    font-size: 19px;
+    width: fit-content;
+    max-width: 80%;
+}
+.baneru_piemers {
+    width: 50%;
+    margin: 0 auto;
+}
+.panel_info {
+    padding: 10px;
+    width: 100%;
+    display: inline;
+}
+.tab {
+    width: fit-content;
+    margin-bottom: 1px;
+}
+.warpper {
+    padding: 3px;}
+}
+
+/*/ Zurnali /*/
+#z_plat {
+    font-size: 16px;
+    font-weight: 500;
+    width: 30%;
+    text-align: center;
+}
+#z_plat:last-child{
+  width: 12%;
+}
+.zurnala_vaks {
+    min-width: 250px;
+    width: 40%;
+    max-height: 500px;
+}
+.zurnala_info {
+    max-width: 80%;
+    margin: 0 auto;
+    display: inherit;
+    background: #fbfbfb;
+    padding: 5px;
+}
+.zurnala_apraksts {
+    padding: 0px 25px;
+}
+.zurnalu_apraksta_list {
+    padding-left: 30px;
+    line-height: 1.5;
+}
+@media only screen and (max-width: 600px) {
+  #z_plat:last-child {
+      display: none;
+  }
+  .persona {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 0 20px 0;
+}
+  #z_plat {
+      font-size: 16px;
+      font-weight: 500;
+      width: 33%;
+      text-align: center;
+  }
+  #z_baneru_info {
+      display: inline-flex;
+      width: 100%;
+  }
+  .zurnala_vaks {
+      width: 40%;
+      max-height: 500px;
+      margin: 0 auto;
+  }
+  .zurnala_apraksts {
+      font-weight: 300;
+      padding: 0px 25px;
+      font-size: 16px;
+  }
+p {
+    padding: 5px;
+    padding-left: 5px;
+    line-height: 1.5;
+}
+.sponsor_elements {
+    width: 100%;
+}
+}
+.zurnalu_apraksta_virsraksts{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+.cenu_lapa{
+  padding-top:10px;
+}
+.cenu_lapa::before {
+    content: "";
+    display: block;
+    background: url(https://image.flaticon.com/icons/svg/149/149184.svg) no-repeat;
+    width: 24px;
+    height: 28px;
+    float: left;
+    margin: 0px 6px 0px 0px;
+}
+
+/*/ Sazinies tabulas ar datiem /*/
+.personas_info{
+    text-align: center;
+    display: grid;
+}
+.name{
+    font-weight: 500;
+    font-size: 20px;
+}
+.persona {
+    margin: 10px;
+    display: inline-block;
+    padding: 0 0 20px 0;
+}
+.list{
+      padding-left: 40px;
+}
+sazinies_info{
+    padding: 20px;
+}
+/*/ piedavajums /*/
+.piedavajums {
+    padding: 25px;
+    background: #fbc900;
+    margin: 10px;
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+}
+.piedavajums:hover {
+box-shadow: 1px 2px 3px grey;
+}
+.piedavajumi{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+}
+.piedavajuma_virsraksts{
+    border-bottom: 1px solid #3a3a3a;
+    font-size: 25px;
+    font-weight: 300;
+    padding-bottom: 5px;
+}
+.sponsorings{
+  width:100%
+}
+.sponsor-vaks{
+    padding-bottom: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+.sponsor_elements {
+    padding: 10px;
+    margin: 1%;
+    min-width: 200px;
+    width: 23%;
+    float: left;
+    height: fit-content;
+    text-align: center;
+}
+.nosaukums{
+    font-size: 18px;
+    padding: 5px 0;
+}
+
+    </style>
+     <div id="lapas_saturs">
+      <h2 style="text-align: center;padding: 10px 0;"> Radoši risinājumi. Izdevīgi nosacījumi. Vislielākā auditorija.</h2>
+  <p>Reklāma ir mediju brīvības pamats un ekonomikas dzinējs. Mēs esam par gudriem un draudzīgiem reklāmas risinājumiem. Mūsu drukas un digitālo mediju auditorija pārsniedz 1,2 miljonus.</p>
+              <div id="subkad_virs"><h2 class="subkategorija">Mobile baneri</h2>
+                </div>
+                  <div class="izmeru_akordeons">
+                    <div id="virsrakstu_info">
+                      <div id="v_plat">Banera nosaukums</div>
+                      <div id="v_plat">Izmērs (px)</div>
+                      <div id="v_plat">CPM</div>
+                      <div id="v_plat">Ekspozīcijas</div>
+                      <div id="v_plat">Piemērs</div>
+                    </div>
+                      <button id="Mobile_centrs" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Centrs 1</div>
+                          <div id="b_plat">300 x 250 / 336 x 280</div>
+                          <div id="b_plat">€ 4,00</div>
+                          <div id="b_plat">80 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Mob-Centrs.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                          </div>
+      <button id="Mobile_centrs-2" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Centrs 2</div>
+                          <div id="b_plat">300 x 250 / 336 x 280</div>
+                          <div id="b_plat">€ 3,50</div>
+                          <div id="b_plat">80 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Mob-Centrs.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                          </div>
+                      <button id="mobile_rakstu_baneris" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Rakstu baneris</div>
+                          <div id="b_plat">300 x 250 / 336 x 280</div>
+                          <div id="b_plat">€ 5,30</div>
+                          <div id="b_plat">230 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Mob-Rakstu.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="mobile_galerija" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Galeriju sponsors</div>
+                          <div id="b_plat">320 x 100</div>
+                          <div id="b_plat">€ 1200,00 nedēļā</div>
+                          <div id="b_plat">2 000 000 nedēļā</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Mob-Galerija.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 100kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="m_pagebreak" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Pagebreak</div>
+                          <div id="b_plat">400 x 900</div>
+                          <div id="b_plat">€ 10,00</div>
+                          <div id="b_plat">270 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Mob-preview.gif" alt="" style=" max-height: 250px; object-fit: contain; "></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5 - <span style="color:red"><b>jābūt responsīvam</b></span><br>
+                                  <span=""><b>Svars:</b> Attēli - līdz 150kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="mob-3d" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">3D Kubs</div>
+                          <div id="b_plat">300 x 300 / 400 x 400</div>
+                          <div id="b_plat">€ 6,50</div>
+                          <div id="b_plat">230 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Mob-preview.gif" alt="" style=" max-height: 250px; object-fit: contain; "></div>
+                                <div class="baneru_informacija">
+                                 <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 100kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="mob-intertestial" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Ievadlapa</div>
+                          <div id="b_plat">300 x 600</div>
+                          <div id="b_plat">€ 28,00</div>
+                          <div id="b_plat">70 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Mob-preview.gif" alt="" style=" max-height: 250px; object-fit: contain; "></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="Mob_time" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Mob. Laika atskaites pulkstens</div>
+                          <div id="b_plat">320 x 240</div>
+                          <div id="b_plat">€ 6,00</div>
+                          <div id="b_plat">130 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Mob-Galerija.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+              <div id="subkad_virs"><h2 class="subkategorija">Standarta baneri Desktop</h2>
+              </div>
+                  <div class="izmeru_akordeons">
+                    <div id="virsrakstu_info">
+                      <div id="v_plat">Banera nosaukums</div>
+                      <div id="v_plat">Izmērs (px)</div>
+                      <div id="v_plat">CPM</div>
+                      <div id="v_plat">Ekspozīcijas</div>
+                      <div id="v_plat">Piemērs</div>
+                    </div>
+                      <button id="giga" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Giga 1</div>
+                          <div id="b_plat">1000 x 200 / 1000 x 250</div>
+                          <div id="b_plat">€ 6,50</div>
+                          <div id="b_plat">300 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Giga-230x150.png" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+  <button id="giga" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Giga 2</div>
+                          <div id="b_plat">1000 x 300</div>
+                          <div id="b_plat">€ 8,50</div>
+                          <div id="b_plat">300 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Giga-230x150.png" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 150kb, HTML - līdz 200kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+  <button id="giga" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Giga XL</div>
+                          <div id="b_plat">1000 x 400</div>
+                          <div id="b_plat">€ 14,00</div>
+                          <div id="b_plat">300 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Giga-230x150.png" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 150kb, HTML - līdz 200kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      </div>
+                      <button id="tornis" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Tornis</div>
+                          <div id="b_plat">300 x 600</div>
+                          <div id="b_plat">€ 4,50</div>
+                          <div id="b_plat">350 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Tornis.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                        <button id="tornis" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Tornis Expand</div>
+                          <div id="b_plat">300 x 600 + 1180 x 600</div>
+                          <div id="b_plat">€ 6,50</div>
+                          <div id="b_plat">350 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Tornis.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                <span=""><b>Pieļaujamie formāti 300 x 600:</b> .jpg, .gif, .png, HTML5<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb<br>
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti 1180 x 600:</b> .jpg, .gif, .png, HTML5<br>
+                                  <span=""><b>Svars:</b> Attēli - līdz 200kb, HTML - līdz 200kb
+                                    </span=""></span=""></span=""></span=""></div>
+                              </div>
+                            </div>
+                        <button id="tornis" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Tornis 3D</div>
+                          <div id="b_plat">300 x 600 x4</div>
+                          <div id="b_plat">€ 6,50</div>
+                          <div id="b_plat">350 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Tornis.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png<br>
+                                <span=""><b>Svars:</b> <span> Attēli - līdz 100kb</span>
+                      </span=""></span=""></div>
+                      </div>
+                      </div>
+  <button id="tornis" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Tornis XL</div>
+                          <div id="b_plat">300 x 1000</div>
+                          <div id="b_plat">€ 7,50</div>
+                          <div id="b_plat">350 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Tornis.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                <span=""><b>Svars:</b> Attēli - līdz 150kb, HTML - līdz 200kb
+                      </span=""></span=""></div>
+                      </div>
+  </div>
+                      <button id="Kvadrats" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Kvadrāts</div>
+                          <div id="b_plat">300 x 300 / 300 x 250</div>
+                          <div id="b_plat">€ 3,50</div>
+                          <div id="b_plat">250 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Kvadrats-1.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="Centrs" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Centrs 1</div>
+                          <div id="b_plat">840 x 250</div>
+                          <div id="b_plat">€ 5,00</div>
+                          <div id="b_plat">130 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Centrs.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5 - <span style="color:red"><b>jābūt responsīvam,</b></span> Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+  <button id="Centrs" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Centrs 1 XL</div>
+                          <div id="b_plat">840 x 350</div>
+                          <div id="b_plat">€ 5,50</div>
+                          <div id="b_plat">130 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Centrs.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5 - <span style="color:red"><b>jābūt responsīvam,</b></span> Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> Attēli - līdz 120kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+  <button id="Centrs" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Centrs 2</div>
+                          <div id="b_plat">840 x 250</div>
+                          <div id="b_plat">€ 4,50</div>
+                          <div id="b_plat">130 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Centrs.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5 - <span style="color:red"><b>jābūt responsīvam,</b></span> Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="Rakstu_baneris" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Rakstu baneris</div>
+                          <div id="b_plat">500 x 200</div>
+                          <div id="b_plat">€ 2,50</div>
+                          <div id="b_plat">160 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Rakstu-baners.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> <span> Attēli - līdz 100kb, HTML - līdz 150kb</span>
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+              
+              <div id="subkad_virs"><h2 class="subkategorija">Nestandarta baneri Desktop</h2>
+              </div>
+                  <div class="izmeru_akordeons">
+                    <div id="virsrakstu_info">
+                      <div id="v_plat">Banera nosaukums</div>
+                      <div id="v_plat">Izmērs (px)</div>
+                      <div id="v_plat">Izvietojums</div>
+                      <div id="v_plat">Ekspozīcijas</div>
+                      <div id="v_plat">Piemērs</div>
+                    </div>
+                      <button id="galeriju_sponsors" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Galeriju sponsors</div>
+                          <div id="b_plat">960 x 600 / 300 x 600</div>
+                          <div id="b_plat">€ 2350,00 nedēļā</div>
+                          <div id="b_plat">2 000 000 nedēļā</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Galeriju-sponsors.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                <br>
+                                  <span=""><b>Pieļaujamie formāti 300 x 600:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> <span> Attēli - līdz 100kb, HTML - līdz 150kb</span><br>
+                                    <br>
+                                    <span=""><b>Pieļaujamie formāti 960 x 600:</b> .jpg, .gif, .png<br>
+                                    <span=""><b>Svars:</b> <span> Attēli - līdz 200kb</span>
+                                    </span=""></span=""></span=""></span=""></div>
+                              </div>
+                            </div>
+                      </div>
+                      <button id="ievadlapa" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Ievadlapa</div>
+                          <div id="b_plat">1000 x 500</div>
+                          <div id="b_plat">€ 28,00</div>
+                          <div id="b_plat">50 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Ievadlapa.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5<br>
+                                  <span=""><b>Svars:</b> <span> Attēli - līdz 200kb, HTML - līdz 200kb</span>
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="fons" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Fons 1</div>
+                          <div id="b_plat">Dažādi</div>
+                          <div id="b_plat">€ 12,00</div>
+                          <div id="b_plat">Jautājiet mums</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Fons.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti 1000 x 150:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> <span> Attēli - līdz 100kb, HTML - līdz 150kb</span><br>
+                                    <br>
+                                  <span=""><b>Pieļaujamie formāti 1920 x 760:</b> .jpg, .png<br>
+                                  <span=""><b>Svars:</b> <span> Attēli - līdz 250kb</span>
+                                    </span=""></span=""></span=""></span=""></div>
+                              </div>
+                            </div>
+                    <button id="fons" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Fons 2</div>
+                          <div id="b_plat">Dažādi</div>
+                          <div id="b_plat">€ 14,00</div>
+                          <div id="b_plat">Jautājiet mums</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Fons.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti 1000 x 200:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> <span> Attēli - līdz 100kb, HTML - līdz 150kb</span><br>
+                                    <br>
+                                  <span=""><b>Pieļaujamie formāti 1920 x 760:</b> .jpg, .png<br>
+                                  <span=""><b>Svars:</b> <span> Attēli - līdz 250kb</span>
+                                    </span=""></span=""></span=""></span=""></div>
+                              </div>
+                            </div>
+                    <button id="fons" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Fons XL</div>
+                          <div id="b_plat">Dažādi</div>
+                          <div id="b_plat">€ 17,00</div>
+                          <div id="b_plat">Jautājiet mums</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Fons.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti 1000 x 300:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> <span> Attēli - līdz 150kb, HTML - līdz 200kb</span><br>
+                                    <br>
+                                  <span=""><b>Pieļaujamie formāti 1920 x 760:</b> .jpg, .png<br>
+                                  <span=""><b>Svars:</b> <span> Attēli - līdz 250kb</span>
+                                    </span=""></span=""></span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="slidosa-rinda" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Slīdošā rinda</div>
+                          <div id="b_plat">1000 x 50</div>
+                          <div id="b_plat">€ 8,00</div>
+                          <div id="b_plat">180 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Slidosais.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png<br>
+                                  <span=""><b>Svars:</b> <span> Attēli - līdz 100kb</span>
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                        <button id="slidosa-rinda" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Slīdošā rinda XL</div>
+                          <div id="b_plat">1000 x 70</div>
+                          <div id="b_plat">€ 14,00</div>
+                          <div id="b_plat">180 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Slidosais.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png<br>
+                                  <span=""><b>Svars:</b> <span> Attēli - līdz 100kb</span>
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="Peldošais" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Peldošais</div>
+                          <div id="b_plat">350 x 350</div>
+                          <div id="b_plat">€ 12,00</div>
+                          <div id="b_plat">75 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Peldosais.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                 <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5<br>
+                                  <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="reklamas-raksts" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Reklāmas raksts</div>
+                          <div id="b_plat">Jautājiet mums!</div>
+                          <div id="b_plat">€ 550,00 dienā</div>
+                          <div id="b_plat">2000+ skatījumi</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Teksta-saite.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span="">Teksta garums līdz 2500 zīmēm, rakstā var ievietot līdz 3 bildēm un izveidot bilžu galeriju līdz 9 bildēm
+                              </span=""></div>
+                            </div>
+                      </div>
+                      <button id="inklude" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Inklūde</div>
+                          <div id="b_plat">300 x 300</div>
+                          <div id="b_plat">€ 137,50 nedēļā</div>
+                          <div id="b_plat">1 250 000 nedēļā</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Inklude.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .xml
+                                    </span=""></div>
+                              </div>
+                            </div>
+                      
+                      <button id="prod-bloks" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Produktu bloks "Esi Vesels"</div>
+                          <div id="b_plat">480 x 320</div>
+                          <div id="b_plat">€ 25,00 dienā</div>
+                          <div id="b_plat">130 000 dienā</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                     <div class="baneru_piemers"><img src="" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .xml
+                                    </span=""></div>
+                              </div>
+                            </div>
+  <button id="prod-bloks" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Produktu bloks "Tavam Skaistumam"</div>
+                          <div id="b_plat">480 x 320</div>
+                          <div id="b_plat">€ 22,40 dienā</div>
+                          <div id="b_plat">130 000 dienā</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                     <div class="baneru_piemers"><img src="" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .xml
+                                    </span=""></div>
+                              </div>
+                            </div>
+                      
+              
+              <div id="subkad_virs"><h2 class="subkategorija">Apvienotās baneru pozīcijas (Desktop + Mobile)</h2>
+              </div>
+                  <div class="izmeru_akordeons">
+                    <div id="virsrakstu_info">
+                      <div id="v_plat">Banera nosaukums</div>
+                      <div id="v_plat">Izmērs (px)</div>
+                      <div id="v_plat">CPM</div>
+                      <div id="v_plat">Ekspozīcijas</div>
+                      <div id="v_plat">Piemērs</div>
+                    </div>
+                      <button id="teksta-saite" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Teksta saite</div>
+                          <div id="b_plat">Līdz 60 zīmēm</div>
+                          <div id="b_plat">€ 3,50</div>
+                          <div id="b_plat">700 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Teksta-saite.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span="">Teksta garums līdz 60 zīmēm, virs un zem visiem portāla rakstiem.
+                                    </span=""></div>
+                            </div>
+                      </div>
+                      <button id="rubrika-sponsor" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Rubrikas sponsors</div>
+                          <div id="b_plat">Jautājiet kontaktpersonai</div>
+                          <div id="b_plat"><u>Uzzini šeit &gt;</u></div>
+                          <div id="b_plat">1 500 000 nedēļā</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                          <div class="baneru_piemers"><img src="" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <div class="izmeru_virsraksti">
+                                    <div class="info_1">Nosaukums</div>
+                                    <div class="info_1">Izmērs</div>
+                                    <div class="info_1">CPM</div>
+                                    <div class="info_1">Ekspozīcijas</div>
+                                  </div>
+                                  <div class="izmeru_teksts">
+                                    <div class="info_1">Zem "Breaking"</div>
+                                    <div class="info_1">Jautājiet kontaktpersonai</div>
+                                    <div class="info_1">€ 4 500 nedēļā</div>
+                                    <div class="info_1">1 500 000 nedēļā</div>
+                                  </div>
+                                  <div class="izmeru_teksts">
+                                    <div class="info_1">Zem "Vērts izlasīt"</div>
+                                    <div class="info_1">Jautājiet kontaktpersonai</div>
+                                    <div class="info_1">€ 4 250 nedēļā</div>
+                                    <div class="info_1">1 500 000 nedēļā</div>
+                                  </div>
+                                  <div class="izmeru_teksts">
+                                    <div class="info_1">Virs "Populārās ziņas"</div>
+                                    <div class="info_1">Jautājiet kontaktpersonai</div>
+                                    <div class="info_1">€ 4 000 nedēļā</div>
+                                    <div class="info_1">1 500 000 nedēļā</div>
+                                  </div>
+                                  <div class="izmeru_teksts">
+                                    <div class="info_1">Zem "Populārās ziņas"</div>
+                                    <div class="info_1">Jautājiet kontaktpersonai</div>
+                                    <div class="info_1">€ 3 900 nedēļā</div>
+                                    <div class="info_1">1 500 000 nedēļā</div>
+                                  </div>
+                                  <div class="izmeru_teksts">
+                                    <div class="info_1">Virs "Noderīgi"</div>
+                                    <div class="info_1">Jautājiet kontaktpersonai</div>
+                                    <div class="info_1">€ 3 500 nedēļā</div>
+                                    <div class="info_1">1 500 000 nedēļā</div>
+                                  </div>
+                                  <div class="izmeru_teksts">
+                                    <div class="info_1">Virs "Izklaide"</div>
+                                    <div class="info_1">Jautājiet kontaktpersonai</div>
+                                    <div class="info_1">€ 3 000 nedēļā</div>
+                                    <div class="info_1">1 500 000 nedēļā</div>
+                                  </div>
+                                  <div class="izmeru_teksts">
+                                    <div class="info_1">Tēmas izcēlums</div>
+                                    <div class="info_1">Jautājiet kontaktpersonai</div>
+                                    <div class="info_1">€ 500 nedēļā</div>
+                                    <div class="info_1">-</div>
+                                  </div>
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b>.jpg, .gif, .png<br>
+                                  <span=""><b>Svars:</b>Attēli - līdz 100kb
+                                    </span=""></span=""></div>
+                              </div>
+                            </div>
+                            </div>
+                      
+              
+              <div id="subkad_virs"><h3 class="subkategorija">Video reklāmas</h3>
+              </div>
+                  <div class="izmeru_akordeons">
+                    <div id="virsrakstu_info">
+                      <div id="v_plat">Banera nosaukums</div>
+                      <div id="v_plat">Svars</div>
+                      <div id="v_plat">CPM</div>
+                      <div id="v_plat">Ekspozīcijas</div>
+                      <div id="v_plat">Piemērs</div>
+                    </div>
+                      <button id="video" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Video pre-roll līdz 25 sek. </div>
+                          <div id="b_plat">līdz 25 MB</div>
+                          <div id="b_plat">€ 20,00</div>
+                          <div id="b_plat">20 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Video-pre-roll.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .avi, .mov, .mp4, .mpeg, .mpg
+                                    </span=""></div>
+                              </div>
+                            </div>
+                        <button id="video" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Video pre-roll 26 - 35 sek. </div>
+                          <div id="b_plat">līdz 25 MB</div>
+                          <div id="b_plat">€ 25,00</div>
+                          <div id="b_plat">20 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Video-pre-roll.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .avi, .mov, .mp4, .mpeg, .mpg
+                                    </span=""></div>
+                              </div>
+                            </div>
+                                          <button id="video" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Video pre-roll 36 - 40 sek. </div>
+                          <div id="b_plat">līdz 25 MB</div>
+                          <div id="b_plat">€ 30,00</div>
+                          <div id="b_plat">20 000</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Video-pre-roll.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .avi, .mov, .mp4, .mpeg, .mpg
+                                    </span=""></div>
+                              </div>
+                            </div>
+                      </div>
+              
+              <div id="subkad_virs"><h3 class="subkategorija">Zīmolu reklāmas produkti</h3>
+              </div>
+                  <div class="izmeru_akordeons">
+                    <div id="virsrakstu_info" style="width: 100%;">
+                      <div id="v_plat" style="width: 30%;">Banera nosaukums</div>
+                      <div id="v_plat" style="width: 30%;">Izmērs</div>
+                      <div id="v_plat" style="width: 30%;">Izcenojums</div>
+                      <div id="v_plat" style="width: 11%;">Piemērs</div>
+                    </div>
+                      <button id="Pastaiga" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Pastaiga Tornis</div>
+                          <div id="b_plat">300 x 600</div>
+                          <div id="b_plat">€ 80,00 dienā</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_informacija">
+                                   <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                              </span=""></span=""></div>
+                            </div>
+                    </div>
+                                        <button id="Pastaiga" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Pastaiga Rakstu baners</div>
+                          <div id="b_plat">500 x 200</div>
+                          <div id="b_plat">€ 80,00 dienā</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_informacija">
+                                   <br>
+                                  <span=""><b>Pieļaujamie formāti:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb
+                              </span=""></span=""></div>
+                            </div>
+                    </div>
+                        <button id="Pastaiga" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Pastaiga Galeriju Sponsors</div>
+                          <div id="b_plat">960 x 600 + 300 x 600</div>
+                          <div id="b_plat">€ 800,00 nedēļā</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_informacija">
+                                   <br>
+                                  <span=""><b>Pieļaujamie formāti 300 x 600:</b> .jpg, .gif, .png, HTML5, Servēšanas kods<br>
+                                  <span=""><b>Svars:</b> Attēli - līdz 100kb, HTML - līdz 150kb<br>
+                                  <br>
+                                  <span=""><b>Pieļaujamie formāti 960 x 600:</b> .jpg, .gif, .png<br>
+                                  <span=""><b>Svars:</b> Attēli - līdz 200kb
+                              </span=""></span=""></span=""></span=""></div>
+                            </div>
+                    </div>
+                        <button id="reklamas-raksts" class="accordion">
+                        <div id="baneru_info">
+                          <div id="b_plat">Pastaiga reklāmas raksts</div>
+                          <div id="b_plat">Jautājiet mums!</div>
+                          <div id="b_plat">€ 300,00 nedēļā</div>
+                        </div></button>
+                        <div class="a_panel">
+                          <div class="panel_info">
+                                <div class="baneru_piemers"><img src="https://www.rigasvilni.lv/assets/reklamas-sadala/Teksta-saite.jpg" alt=""></div>
+                                <div class="baneru_informacija">
+                                  <br>
+                                  <span="">Teksta garums līdz 2500 zīmēm, rakstā var ievietot līdz 3 bildēm un izveidot bilžu galeriju līdz 9 bildēm
+                              </span=""></div>
+                            </div>
+                      </div>
+                      </div>
+                    <br>
+  
+                    <div id="subkad_virs"><h3 class="subkategorija">Lejupielādēt specifikācijas pdf formātā</h3>
+                    </div>
+                    <ul style=" line-height: 2rem; padding-left: 40px; list-style: none;">
+                      <li><a class="cenu_lapa" href="https://www.rigasvilni.lv/assets/images/PDF/Specs/Tehniska_specifikacija_2020.pdf" target="_blank">Reklāmas laukumu tehniskā specifikācija</a></li>
+                      <li><a class="cenu_lapa" href="https://www.rigasvilni.lv/assets/images/PDF/Specs/Tehniska_specifikacija_include.pdf" target="_blank">4 bilžu XML inklūdes tehniskā specifikācija</a></li>
+                      <li><a class="cenu_lapa" href="https://www.rigasvilni.lv/assets/images/PDF/Specs/Tehniska_specifikacija_HTML5_2020.pdf" target="_blank">HTML5 baneru tehniskā specifikācija</a></li>
+                      <li><a class="cenu_lapa" href="https://www.rigasvilni.lv/assets/images/PDF/Specs/Tehniska_specifikacija_Video-2020.pdf" target="_blank">Video reklāmas tehniskā specifikācija</a></li>
+                      <li><a class="cenu_lapa" href="https://www.rigasvilni.lv/assets/images/PDF/Specs/Reklamrakstu-Ieteikumi-2021.pdf" target="_blank">Redakcionāli ieteikumi veiksmīgāka reklāmas vai sadarbības raksta izveidei</a></li>
+                    </ul>
+                    <p style=" font-weight: 500; text-decoration: underline; margin-left: 10px; font-size: 1.1rem; ">Download specification in English</p>
+                    <ul style=" line-height: 2rem; padding-left: 40px; list-style: none;">
+                      <li><a class="cenu_lapa" href="https://www.rigasvilni.lv/assets/images/PDF/Specs/Tehniska_specifikacija_2020-ENG.pdf" target="_blank">Ad placement technical specification</a></li>
+                      <li><a class="cenu_lapa" href="https://www.rigasvilni.lv/assets/images/PDF/Specs/Tehniska_specifikacija_include_2020-ENG.pdf" target="_blank">4-image dynamic XML banner specification</a></li>
+                      <li><a class="cenu_lapa" href="https://www.rigasvilni.lv/assets/images/PDF/Specs/Technical-Specification-HTML5-2020-ENG.pdf" target="_blank">HTML5 technical specification</a></li>
+                      <li><a class="cenu_lapa" href="https://www.rigasvilni.lv/assets/images/PDF/Specs/Technical-Specification-Video-ENG-2020.pdf" target="_blank">Video ad technical specification</a></li>
+                    </ul>
+            
+    
+  
+  
+
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+      var i;
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+  
+            var active = document.getElementsByClassName("accordion active")[0];
+          if (active) {
+              active.classList.remove("active");
+            var p_panel = active.nextElementSibling;
+            p_panel.style.maxHeight = null;
+          }
+          this.classList.toggle("active");
+          var a_panel = this.nextElementSibling;
+          if (a_panel.style.maxHeight) {
+            a_panel.style.maxHeight = null;
+          } else {
+            a_panel.style.maxHeight = a_panel.scrollHeight + "px";
+          }
+        });
+      }
+  
+      for(var i = 0; i< document.getElementsByTagName("img").length; i++){
+          var src = document.getElementsByTagName("img")[i].getAttribute("src");
+          document.getElementsByTagName("img")[i].setAttribute("src", src.replace("./Reklāmas piedāvājums_files/", "https://www.rigasvilni.lv/assets/reklamas-sadala/"));
+        }
+    </script>
