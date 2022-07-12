@@ -1,0 +1,532 @@
+/*/ defaultais /*/
+* {
+    box-sizing: border-box;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto,sans-serif;
+}
+html{
+  background: white;
+  padding:5px;
+}
+img{
+    width: 100%;
+}
+a{
+  text-decoration: none;
+  color:black;
+}
+a:hover{
+  text-decoration: underline;
+  color:black;
+}
+p{
+  font-weight: 200;
+  padding: 5px;
+  padding-left: 10px;
+  line-height: 1.5;
+}
+h1{
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+h3 {
+    padding-top: 10px;
+    padding-bottom: 3px;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+h2 {
+    padding-top: 10px;
+    padding-bottom:10px;
+    font-size: 17px;
+}
+h4 {
+    padding-top: 5px;
+    font-size: 21px;
+    font-weight: 300;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+ul {
+    font-weight: 300;
+    padding-left: 40px;
+    line-height: 1.5;
+}
+/*/ Panelja informācija /*/
+#subkad_teksts {
+    margin-top: 10px;
+    height: 18px;
+    margin-bottom: 17px;
+    border-bottom: 2px solid #f5cc06;
+}
+#subkad_virs {
+    margin: 40px 0;
+    min-height: 15px;
+    margin-bottom: 17px;
+    border-bottom: 2px solid #f5cc06;
+}
+.subkategorija {
+    font-size: 25px;
+    width: fit-content;
+    background: White;
+    margin-left: 25px;
+    padding: 0px 15px;
+    font-weight: 400;
+}
+.accordion {
+    margin-top: 2px;
+    cursor: pointer;
+    padding: 5px 10px;
+    width: 100%;
+    border-bottom: 1px;
+    text-align: left;
+    font-size: 15px;
+    transition: 0.4s;
+    outline: none;
+    border-bottom: 1px solid #e4e4e4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: white;
+}
+.active{
+    transition: none;
+}
+.accordion:hover {
+    background-color: #a5a5a512;
+    transition: none;
+}
+.accordion:after {
+    text-align: center;
+    content: "Apskatīt";
+    float: right;
+    padding-right: 30px;
+}
+.active:after {
+    content: "Atvērts";
+}
+.a_panel {
+    width: 85%;
+    margin: 0 auto;
+    max-height: 0;
+    margin-bottom: 3px;
+    overflow: hidden;
+    transition: max-height 0.32s ease-out;
+}
+#virsrakstu_info {
+    border-bottom: 1px solid #7b7b7b;
+    display: inline-flex;
+    width: 100%;
+    padding: 10px 0 5px;
+}
+#v_plat {
+    font-size: 16px;
+    font-weight: 500;
+    width: 22%;
+    text-align: center;
+}
+#v_plat:last-child {
+    position: absolute;
+    right: 0;
+    width: 15%;
+}
+#b_plat:first-child {
+    font-weight: 600;
+}
+#b_plat {
+    font-size: 14px;
+    border-right: 1px solid #dedede;
+    width: 100%;
+    text-align: center;
+}
+#baneru_info {
+    display: inline-flex;
+    width: 89%;
+}
+#z_v_plat {
+    font-size: 16px;
+    font-weight: 500;
+    width: 22%;
+    text-align: center;
+}
+#z_v_plat:last-child{
+  width: 12%;
+}
+#z_b_plat:first-child {
+    font-weight: 600;
+}
+#z_b_plat {
+    font-size: 14px;
+    border-right: 1px solid #dedede;
+    width: 100%;
+    text-align: center;
+}
+#z_baneru_info {
+    display: inline-flex;
+    width: 89%;
+}
+.baneru_informacija {
+    font-size: 14px;
+    width: 100%;
+    padding: 5px 20px;
+}
+.panel_info {
+    padding: 10px;
+    width: 100%;
+    display: inline-flex;
+}
+.b_nos{
+  border-right: 1px solid white; padding-right:5px; color:black
+}
+.baneru_piemers {
+    max-width: 30%;
+    max-height: 200px;
+    object-fit: contain;
+}
+.izmeru_virsraksti {
+    display: inline-flex;
+    width: 100%;
+    font-weight: 500;
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 1px;
+    margin-bottom: 3px;
+}
+.izmeru_teksts{
+    display: flex;
+}
+.info_1 {
+    padding-top: 4px;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+}
+.pieejamie_izmeri{font-weight: 500
+}
+.specifikacija {
+    line-height: 1.6rem;
+    padding-left: 50px;
+}
+.main_saturs {
+    background: White;
+    overflow: auto;
+}
+#reklamas_tabi {
+    background-color: #f5cc06;
+    position: relative;
+}
+.uzruna {
+    position: absolute;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #272727;
+    top: 70px;
+    left: 25px;
+    z-index: 1;
+}
+.uzruna2 {
+    position: absolute;
+    font-size: 1.55rem;
+    font-weight: 200;
+    color: #272727;
+    top: 130px;
+    left: 25px;
+    z-index: 1;
+}
+.cover_bilde {
+    object-fit: contain;
+    background-image: url(https://i.jauns.lv/t/2017/02/03/68668/1800x600.jpg?v=1486114809);
+    background-size: cover;
+    height: 220px;
+    overflow: hidden;
+}
+/*/ tabi /*/
+.warpper {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+}
+.tab {
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 18px;
+    margin: 0 4px;
+    display: inline-block;
+    font-weight: 300;
+}
+.panels {
+  width:100%;
+    min-height: 600px;
+    margin-left: 0;
+    float: left;
+    text-align: left;
+    overflow: hidden;
+    padding: 20px;
+}
+.panel{
+  display:none;
+}
+.panel-title {
+    border-bottom: 2px solid #f5cb02;
+    font-size: 1.72em;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+/*/ responsivie /*/
+@media only screen and (max-width: 800px) {
+  .accordion:after {
+    text-align: center;
+    content: "Apskatīt";
+    float: right;
+    padding-right: 9px;
+}
+}
+@media only screen and (max-width: 600px) {
+  #lapas_saturs {
+    padding: 5px;
+    width: 100%;
+}
+#reklamas_tabi {
+    height: 130px;
+    background-color: #f5cc06;
+    position: relative;
+}
+.accordion{
+    padding: 5px;
+}
+.uzruna2 {
+    font-size: 21px;
+    top: 75px;
+    left: 25px;
+    z-index: 1;
+}
+.a_panel {
+    background: #fff;
+  }
+.uzruna {
+    font-size: 1.92rem;
+    top: 15px;
+    line-height: 27px;
+}
+.cover_bilde {
+    height: 150px;}
+.panels {
+    width: 100%;}
+  .baneru_piemers {
+      width: 50%;
+      margin: 0 auto;
+  }
+  .main_saturs {
+    width: 100%;
+  }
+  .panels {
+      padding: 2px;
+  }
+  #v_plat {
+      font-size: 14px;
+      width: 25%;
+  }
+  #b_plat:nth-child(4){
+    border:none;
+  }
+  #v_plat:last-child {
+    display: none;
+}
+.accordion:after {
+    display: none;
+}
+#baneru_info {
+    display: inline-flex;
+    width: 100%;
+}
+.baneru_informacija {
+    font-size: 13px;
+    padding: 5px;
+}
+.panel-title {
+  padding-top:10px;
+}
+#subkad_virs {
+    margin: 20px 0;
+    height: 10px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f5cc06;
+}
+.subkategorija {
+    line-height: 18px;
+    font-size: 19px;
+    width: fit-content;
+    max-width: 80%;
+}
+.baneru_piemers {
+    width: 50%;
+    margin: 0 auto;
+}
+.panel_info {
+    padding: 10px;
+    width: 100%;
+    display: inline;
+}
+.tab {
+    width: fit-content;
+    margin-bottom: 1px;
+}
+.warpper {
+    padding: 3px;}
+}
+
+/*/ Zurnali /*/
+#z_plat {
+    font-size: 16px;
+    font-weight: 500;
+    width: 30%;
+    text-align: center;
+}
+#z_plat:last-child{
+  width: 12%;
+}
+.zurnala_vaks {
+    min-width: 250px;
+    width: 40%;
+    max-height: 500px;
+}
+.zurnala_info {
+    max-width: 80%;
+    margin: 0 auto;
+    display: inherit;
+    background: #fbfbfb;
+    padding: 5px;
+}
+.zurnala_apraksts {
+    padding: 0px 25px;
+}
+.zurnalu_apraksta_list {
+    padding-left: 30px;
+    line-height: 1.5;
+}
+@media only screen and (max-width: 600px) {
+  #z_plat:last-child {
+      display: none;
+  }
+  .persona {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 0 20px 0;
+}
+  #z_plat {
+      font-size: 16px;
+      font-weight: 500;
+      width: 33%;
+      text-align: center;
+  }
+  #z_baneru_info {
+      display: inline-flex;
+      width: 100%;
+  }
+  .zurnala_vaks {
+      width: 40%;
+      max-height: 500px;
+      margin: 0 auto;
+  }
+  .zurnala_apraksts {
+      font-weight: 300;
+      padding: 0px 25px;
+      font-size: 16px;
+  }
+p {
+    padding: 5px;
+    padding-left: 5px;
+    line-height: 1.5;
+}
+.sponsor_elements {
+    width: 100%;
+}
+}
+.zurnalu_apraksta_virsraksts{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+.cenu_lapa{
+  padding-top:10px;
+}
+.cenu_lapa::before {
+    content: "";
+    display: block;
+    background: url(https://image.flaticon.com/icons/svg/149/149184.svg) no-repeat;
+    width: 24px;
+    height: 28px;
+    float: left;
+    margin: 0px 6px 0px 0px;
+}
+
+/*/ Sazinies tabulas ar datiem /*/
+.personas_info{
+    text-align: center;
+    display: grid;
+}
+.name{
+    font-weight: 500;
+    font-size: 20px;
+}
+.persona {
+    margin: 10px;
+    display: inline-block;
+    padding: 0 0 20px 0;
+}
+.list{
+      padding-left: 40px;
+}
+sazinies_info{
+    padding: 20px;
+}
+/*/ piedavajums /*/
+.piedavajums {
+    padding: 25px;
+    background: #fbc900;
+    margin: 10px;
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+}
+.piedavajums:hover {
+box-shadow: 1px 2px 3px grey;
+}
+.piedavajumi{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+}
+.piedavajuma_virsraksts{
+    border-bottom: 1px solid #3a3a3a;
+    font-size: 25px;
+    font-weight: 300;
+    padding-bottom: 5px;
+}
+.sponsorings{
+  width:100%
+}
+.sponsor-vaks{
+    padding-bottom: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+.sponsor_elements {
+    padding: 10px;
+    margin: 1%;
+    min-width: 200px;
+    width: 23%;
+    float: left;
+    height: fit-content;
+    text-align: center;
+}
+.nosaukums{
+    font-size: 18px;
+    padding: 5px 0;
+}
